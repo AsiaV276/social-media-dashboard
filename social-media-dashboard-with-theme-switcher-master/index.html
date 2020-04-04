@@ -5,79 +5,398 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <title>Frontend Mentor | [Challenge Name Here]</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    html {
+      background: hsl(230, 17%, 14%);
+      color: hsl(0, 0%, 100%);
+      font-family: Inter;
+    }
+    .attribution { 
+      font-size: 11px; text-align: center; 
+      }
+    .attribution a { 
+      color: hsl(228, 45%, 44%); 
+      }
+
+    /* Mobile Header */
+    header {
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      margin: 30px 15px;
+    }
+    .title p {
+      font-size: 1.4em;
+      font-weight: 700;
+      margin: 0;
+      margin-bottom: 5px;
+    }
+
+    header h4 {
+      color: hsl(228, 34%, 66%);
+      font-size: 14px;
+      font-weight: 700;
+      margin: 0;
+      margin-bottom: 20px;
+
+    }
+
+    .title {
+      border-bottom: 1px solid hsl(228, 34%, 66%);
+    }
+
+    #dark-mode {
+      margin-bottom: 5px;
+      margin-top: 20px;
+    }
+    /* End of Mobile Header*/
+
+
+    /* Main Section  */
+    #social-container,
+    #overview-container {
+      display: flex;
+      flex-direction: column;
+      margin: 15px;
+    }
+
+    .social-box {
+      width: auto;
+      padding: 25px 50px;
+      border-top: blueviolet 5px solid;
+      background-color: hsl(228, 28%, 20%);
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .overview-box {
+      display: flex;
+      flex-direction: column;
+      width: auto;
+      padding: 25px;
+      background-color: hsl(228, 28%, 20%);
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .o-box1,
+    .o-box2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .o-box1 {
+      margin-bottom: 15px;
+    }
+    .o-box2 {
+      margin-top: 15px;
+    }
+
+    .o-box1 p,
+    .o-box2 p {
+      margin: 0;
+    } 
+
+    .o-box1 p {
+      font-size: 14px;
+      color:  hsl(228, 34%, 66%);
+      font-weight: 700;
+    }
+
+    .o-box2 p {
+      font-size: 1.5em;
+      font-weight: 700;
+    }
+
+    .o-box-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    .updown img,
+    .up,
+    .down {
+      display: inline;
+      font-size: 14px !important;
+    }
+
+    .up {
+      color: hsl(163, 72%, 41%);
+      font-size: 14px;
+      font-weight: 700;
+      padding-left: 10px;
+    }
+
+    .down {
+      color: hsl(356, 69%, 56%);
+      font-size: 14px;
+      font-weight: 700;
+      padding-left: 10px;
+    }
+    
+
+    @media only screen and (min-width: 375px) {
+      /*html {
+        }
+        */
+      header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .title {
+        border: none;
+      }
+
+      #social-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+    .social-box {
+        width: 250px;
+        padding: 25px 50px;
+        border-top: blueviolet 5px solid;
+        background-color: hsl(228, 28%, 20%);
+        text-align: center;
+        margin: 15px;
+        border-radius: 5px;
+      }
+
+      #overview-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
+      .overview-box {
+        width: 300px;
+      }
+    }
+
+    
+    
+    
+    
+    .box-s1 img,
+    .box-s1 p {
+      display: inline;
+      align-items: center;
+    }
+
+    .box-s1 p {
+      color: hsl(228, 34%, 66%);
+      font-size: 14px;
+      font-weight: 700;
+      padding-left: 10px;
+    }
+
+    .followers {
+      line-height: normal;
+      padding: 20px;
+    }
+    .fcount {
+      font-size: 4em;
+      font-weight: 700;
+      margin: 0;
+    }
+    .ftext {
+      letter-spacing: 3px;
+      margin: 0;
+      color: hsl(228, 34%, 66%);
+      text-transform: uppercase;
+    }
+
+    
+
   </style>
 </head>
 <body>
+  <header>
+    <div class="title">
+      <p>Social Media Dashboard</p>
+      <h4>Total Followers: 23,004</h4>
+    </div>
+    
 
-  Social Media Dashboard
-  Total Followers: 23,004
+    <span><h4 id="dark-mode">Dark Mode</h4></span>
 
-  Dark Mode
+  </header>
+  
+  <main>
+    <section>
+      <div id="social-container">
+        <div class="social-box">
+          <span class="box-s1"><img src="./images/icon-facebook.svg" alt=""><p>@nathanf</p></span>
+          <div class="followers">
+            <p class="fcount">1987</p>
+            <p class="ftext">Followers</p>
+          </div>
+            <span class="updown"><img src="images/icon-up.svg" alt=""><p class="up">12 Today</p></span>
+        </div>
+       
+        <div class="social-box">
+          <span class="box-s1"><img src="./images/icon-twitter.svg" alt=""><p>@nathanf</p></span>
+          <div class="followers">
+            <p class="fcount">1044</p>
+            <p class="ftext">Followers</p>
+          </div>
+            <span class="updown"><img src="images/icon-up.svg" alt=""><p class="up">99 Today</p></span>
+        </div>
+        <div class="social-box">
+          <span class="box-s1"><img src="./images/icon-instagram.svg" alt=""><p>@realnathanf</p></span>
+          <div class="followers">
+            <p class="fcount">11k</p>
+            <p class="ftext">Followers</p>
+          </div>
+            <span class="updown"><img src="images/icon-up.svg" alt=""><p class="up">1099 Today</p></span>
+        </div>
+        <div class="social-box">
+          <span class="box-s1"><img src="./images/icon-youtube.svg" alt=""><p>Nathan F.</p></span>
+          <div class="followers">
+            <p class="fcount">8239</p>
+            <p class="ftext">Subscribers</p>
+          </div>
+            <span class="updown"><img src="images/icon-down.svg" alt=""><p class="down">144 Today</p></span>
+        </div>
+        
+      </div>
+    </section>
+    
+
+    <h2>Overview - Today</h2>
+    <section id="overview-container">
+      <div class="overview-box">
+        <div class="o-box1">
+          <p>Page Views</p>
+          <img src="./images/icon-facebook.svg" class="o-box-icon">
+        </div> 
+        <div class="o-box2">
+          <p>87</p>
+          <span class="updown">
+            <img src="./images/icon-up.svg" alt="">
+            <p class="up">3%</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="overview-box">
+        <div class="o-box1">
+          <p>Likes</p>
+          <img src="./images/icon-facebook.svg" class="o-box-icon">
+        </div> 
+        <div class="o-box2">
+          <p>52</p>
+          <span class="updown">
+            <img src="./images/icon-down.svg" alt="">
+            <p class="down">2%</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="overview-box">
+        <div class="o-box1">
+          <p>Likes</p>
+          <img src="./images/icon-instagram.svg" class="o-box-icon">
+        </div> 
+        <div class="o-box2">
+          <p>5462</p>
+          <span class="updown">
+            <img src="./images/icon-up.svg" alt="">
+            <p class="up">2257%</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="overview-box">
+        <div class="o-box1">
+          <p>Profile Views</p>
+          <img src="./images/icon-instagram.svg" class="o-box-icon">
+        </div> 
+        <div class="o-box2">
+          <p>52k</p>
+          <span class="updown">
+            <img src="./images/icon-up.svg" alt="">
+            <p class="up">1375%</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="overview-box">
+        <div class="o-box1">
+          <p>Retweets</p>
+          <img src="./images/icon-twitter.svg" class="o-box-icon">
+        </div> 
+        <div class="o-box2">
+          <p>117</p>
+          <span class="updown">
+            <img src="./images/icon-up.svg" alt="">
+            <p class="up">303%</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="overview-box">
+        <div class="o-box1">
+          <p>Retweets</p>
+          <img src="./images/icon-twitter.svg" class="o-box-icon">
+        </div> 
+        <div class="o-box2">
+          <p>507</p>
+          <span class="updown">
+            <img src="./images/icon-up.svg" alt="">
+            <p class="up">553%</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="overview-box">
+        <div class="o-box1">
+          <p>Likes</p>
+          <img src="./images/icon-youtube.svg" class="o-box-icon">
+        </div> 
+        <div class="o-box2">
+          <p>107</p>
+          <span class="updown">
+            <img src="./images/icon-down.svg" alt="">
+            <p class="down">19%</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="overview-box">
+        <div class="o-box1">
+          <p>Total Views</p>
+          <img src="./images/icon-youtube.svg" class="o-box-icon">
+        </div> 
+        <div class="o-box2">
+          <p>1407</p>
+          <span class="updown">
+            <img src="./images/icon-down.svg" alt="">
+            <p class="down">12%</p>
+          </span>
+        </div>
+      </div>
+
+    </section>
+  
+  </main>
 
   
 
-  @nathanf
-  1987
-  Followers
-  12 Today
-
-  @nathanf
-  1044
-  Followers
-  99 Today
-
-  @realnathanf
-  11k
-  Followers
-  1099 Today
-
-  Nathan F.
-  8239
-  Subscribers
-  144 Today
-
-
-
-  Overview - Today
-
-  Page Views
-  87
-  3%
-
-  Likes
-  52
-  2%
-
-  Likes
-  5462
-  2257%
-
-  Profile Views
-  52k
-  1375%
-
-  Retweets
-  117
-  303%
-
-  Likes
-  507
-  553%
-
-  Likes
-  107
-  19%
-
-  Total Views
-  1407
-  12%
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
