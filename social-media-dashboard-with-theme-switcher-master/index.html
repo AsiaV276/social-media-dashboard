@@ -10,9 +10,31 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    html {
-      background: hsl(230, 17%, 14%);
-      color: hsl(0, 0%, 100%);
+    :root {
+      /* Themes */
+      --dark-bg: hsl(230, 17%, 14%);
+      --dark-bg-top: hsl(232, 19%, 15%);
+      --dark-text: hsl(228, 34%, 66%);
+      --dark-card: hsl(228, 28%, 20%);
+      --light-bg: hsl(0, 0%, 100%);
+      --light-bg-top: hsl(225, 100%, 98%);
+      --light-text: hsl(228, 12%, 44%);
+      --light-text-blue: hsl(230, 17%, 14%);
+      --light-card: hsl(227, 47%, 96%);
+      /* Primary colors */
+      --fb-color: hsl(195, 100%, 50%);
+      --tw-color: hsl(203, 89%, 53%);
+      --yt-color: hsl(348, 97%, 39%);
+      --bright-red: hsl(356, 69%, 56%);
+      --lime-green: hsl(163, 72%, 41%);
+      --toggle-blue: hsl(210, 78%, 56%);
+      --toggle-green: hsl(146, 68%, 55%);
+      --toggle-light: hsl(230, 22%, 74%);
+    }
+    
+    body {
+      background: var(--dark-bg);
+      color: white;
       font-family: Inter;
     }
     .attribution { 
@@ -39,7 +61,7 @@
     }
 
     header h4 {
-      color: hsl(228, 34%, 66%);
+      color: var(--dark-text);
       font-size: 14px;
       font-weight: 700;
       margin: 0;
@@ -48,13 +70,66 @@
     }
 
     .title {
-      border-bottom: 1px solid hsl(228, 34%, 66%);
+      border-bottom: 1px solid var(--dark-text);
+    }
+    
+    .dark-mode-container {
+      margin-top: 15px;
+    }
+    .dark-mode {
+      display: inline-block;
     }
 
-    #dark-mode {
-      margin-bottom: 5px;
-      margin-top: 20px;
-    }
+
+      /* Switch around the slider */
+      .toggle-switch {
+        position: relative;
+        float: right;
+        width: 60px;
+        height: 27px;
+        background-image: linear-gradient(to right, var(--toggle-blue), var(--toggle-green));
+        border-radius: 50px;
+      }
+      /* hiding default checkbox*/
+      .toggle-switch input {
+        display: none;
+      }
+      /* slider */
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 2px;
+        bottom: 2px;
+        left: 2px;
+        right: 2px;
+        background-color: darkblue;
+        -webkit-transition: .4s;
+        transition: .4s;
+      }
+      input:checked + .slider {
+        background-color: white;
+      }
+      /*input:checked + .toggle-switch {
+        background-image: linear-gradient(to right, hsl(230, 22%, 74%), hsl(230, 22%, 74%));
+        
+      }*/
+      input:checked + .slider {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+      }
+
+      .slider.round {
+        border-radius: 50px;
+        width: 50%;
+      }
+      .slider.round::before {
+        border-radius: 50%;
+      }
+      /*.round {
+        border-radius: 50px;
+        width: 49%;
+      }*/
     /* End of Mobile Header*/
 
 
@@ -69,11 +144,36 @@
     .social-box {
       width: auto;
       padding: 25px 50px;
-      border-top: blueviolet 5px solid;
-      background-color: hsl(228, 28%, 20%);
+      background-color: var(--dark-card);
       text-align: center;
       border-radius: 5px;
       margin-bottom: 20px;
+    }
+
+    .fb-border {
+      border-top: var(--fb-color) 5px solid;
+    }
+    .tw-border {
+      border-top: var(--tw-color) 5px solid;
+    }
+    .ig-border-box {
+      width: auto;
+      text-align: center;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      display: inline-block;
+      padding-top: 5px;
+      background-image: -webkit-linear-gradient(left, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+      text-align: center;
+    }
+    .ig-border-inner {
+      padding: 25px 50px;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-color: var(--dark-card);
+    }
+    .yt-border {
+      border-top: var(--yt-color) 5px solid;
     }
 
     .overview-box {
@@ -81,7 +181,7 @@
       flex-direction: column;
       width: auto;
       padding: 25px;
-      background-color: hsl(228, 28%, 20%);
+      background-color: var(--dark-card);
       border-radius: 5px;
       margin-bottom: 20px;
     }
@@ -108,7 +208,7 @@
 
     .o-box1 p {
       font-size: 14px;
-      color:  hsl(228, 34%, 66%);
+      color:  var(--dark-text);
       font-weight: 700;
     }
 
@@ -130,24 +230,25 @@
     }
 
     .up {
-      color: hsl(163, 72%, 41%);
+      color: var(--lime-green);
       font-size: 14px;
       font-weight: 700;
       padding-left: 10px;
     }
 
     .down {
-      color: hsl(356, 69%, 56%);
+      color: var(--bright-red);
       font-size: 14px;
       font-weight: 700;
       padding-left: 10px;
     }
     
 
-    @media only screen and (min-width: 375px) {
-      /*html {
-        }
-        */
+    @media only screen and (min-width: 720px) {
+      body {
+        margin: 20px;
+      }
+      
       header {
         display: flex;
         flex-direction: row;
@@ -165,14 +266,11 @@
         flex-wrap: wrap;
       }
 
-    .social-box {
-        width: 250px;
-        padding: 25px 50px;
-        border-top: blueviolet 5px solid;
-        background-color: hsl(228, 28%, 20%);
-        text-align: center;
-        margin: 15px;
-        border-radius: 5px;
+      .social-box {
+          margin: 15px;
+        }
+      .ig-border-box {
+          margin: 15px;
       }
 
       #overview-container {
@@ -186,10 +284,6 @@
         width: 300px;
       }
     }
-
-    
-    
-    
     
     .box-s1 img,
     .box-s1 p {
@@ -198,7 +292,7 @@
     }
 
     .box-s1 p {
-      color: hsl(228, 34%, 66%);
+      color: var(--dark-text);
       font-size: 14px;
       font-weight: 700;
       padding-left: 10px;
@@ -214,13 +308,44 @@
       margin: 0;
     }
     .ftext {
-      letter-spacing: 3px;
+      letter-spacing: 5px;
       margin: 0;
-      color: hsl(228, 34%, 66%);
+      color: var(--dark-text);
       text-transform: uppercase;
     }
-
     
+    /* Light Mode */
+    .light-body {
+      background-color: var(--light-bg);
+      color: black;
+    }
+    #light-main-header {
+      color: var(--light-text);
+    }
+    #light-title {
+      border-bottom: var(--light-text);
+    }
+    .light-o-heading {
+      color: var(--light-text);
+    }
+    .light-social-box {
+      background-color: var(--light-card);
+    }
+    .light-ig-border-inner {
+      background-color: var(--light-card);
+    }
+    .light-overview-box {
+      background-color: var(--light-card);
+    }
+    .light-o-box1-p {
+      color: var(--light-text);
+    }
+    .light-box-s1 p,
+    .light-ftext {
+      color: var(--light-text);
+    }
+
+
 
   </style>
 </head>
@@ -228,18 +353,24 @@
   <header>
     <div class="title">
       <p>Social Media Dashboard</p>
-      <h4>Total Followers: 23,004</h4>
+      <h4 class="main-header">Total Followers: 23,004</h4>
     </div>
     
 
-    <span><h4 id="dark-mode">Dark Mode</h4></span>
+    <span class="dark-mode-container">
+      <h4 class="dark-mode">Dark Mode</h4>
+      <label class="toggle-switch">
+        <input type="checkbox" onclick="changeDarkMode()" checked>
+        <span class="slider round"></span>
+      </label>
+    </span>
 
   </header>
   
   <main>
     <section>
       <div id="social-container">
-        <div class="social-box">
+        <div class="social-box fb-border">
           <span class="box-s1"><img src="./images/icon-facebook.svg" alt=""><p>@nathanf</p></span>
           <div class="followers">
             <p class="fcount">1987</p>
@@ -248,7 +379,7 @@
             <span class="updown"><img src="images/icon-up.svg" alt=""><p class="up">12 Today</p></span>
         </div>
        
-        <div class="social-box">
+        <div class="social-box tw-border">
           <span class="box-s1"><img src="./images/icon-twitter.svg" alt=""><p>@nathanf</p></span>
           <div class="followers">
             <p class="fcount">1044</p>
@@ -256,15 +387,18 @@
           </div>
             <span class="updown"><img src="images/icon-up.svg" alt=""><p class="up">99 Today</p></span>
         </div>
-        <div class="social-box">
-          <span class="box-s1"><img src="./images/icon-instagram.svg" alt=""><p>@realnathanf</p></span>
-          <div class="followers">
-            <p class="fcount">11k</p>
-            <p class="ftext">Followers</p>
+        <div class="ig-border-box">
+          <div class="ig-border-inner">
+            <span class="box-s1"><img src="./images/icon-instagram.svg" alt=""><p>@realnathanf</p></span>
+            <div class="followers">
+              <p class="fcount">11k</p>
+              <p class="ftext">Followers</p>
+            </div>
+              <span class="updown"><img src="images/icon-up.svg" alt=""><p class="up">1099 Today</p></span>
+        
           </div>
-            <span class="updown"><img src="images/icon-up.svg" alt=""><p class="up">1099 Today</p></span>
         </div>
-        <div class="social-box">
+        <div class="social-box yt-border">
           <span class="box-s1"><img src="./images/icon-youtube.svg" alt=""><p>Nathan F.</p></span>
           <div class="followers">
             <p class="fcount">8239</p>
@@ -277,7 +411,7 @@
     </section>
     
 
-    <h2>Overview - Today</h2>
+    <h2 class="o-heading">Overview - Today</h2>
     <section id="overview-container">
       <div class="overview-box">
         <div class="o-box1">
@@ -400,7 +534,8 @@
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://asiav276.github.io/">Asia Valentine</a>.
   </div>
+  <script src="index.js"></script>
 </body>
 </html>
