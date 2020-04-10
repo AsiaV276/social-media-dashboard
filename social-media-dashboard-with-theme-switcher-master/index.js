@@ -1,3 +1,5 @@
+checkBox.checked = true;
+
 function changeDarkMode() {
     //var checkBox = document.getElementById('toggle-dark-mode');
 
@@ -7,13 +9,14 @@ function changeDarkMode() {
     var overviewBox = document.getElementsByClassName('overview-box');
     var background = document.body;
 
-    //if (checkBox.checked == true) {
-        
         //changing social boxes
         var i;
         for (i = 0; i < socialBox.length; i++) {
             socialBox[i].classList.toggle('light-social-box');
         }
+
+        //changing ig background box
+        igBox[0].classList.toggle('light-social-box');
 
         //changing overview boxes
         var x;
@@ -24,13 +27,7 @@ function changeDarkMode() {
         //changing background
         background.classList.toggle('light-body');
 
-        //changing ig box
-        console.log(background.classList);
         
-        console.log(igBox);
-        
-        //igBox.classList.toggle('light-ig-border-inner');
-
 
     
     

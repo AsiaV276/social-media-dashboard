@@ -86,7 +86,7 @@
         position: relative;
         float: right;
         width: 60px;
-        height: 27px;
+        height: 25px;
         background-image: linear-gradient(to right, var(--toggle-blue), var(--toggle-green));
         border-radius: 50px;
       }
@@ -186,6 +186,10 @@
       margin-bottom: 20px;
     }
 
+    .o-heading {
+      margin: 15px;
+    }
+
     .o-box1,
     .o-box2 {
       display: flex;
@@ -257,6 +261,14 @@
 
       .title {
         border: none;
+      }
+
+      .dark-mode {
+        margin-top: 4px;
+      }
+
+      .toggle-switch {
+        margin-left: 5px;
       }
 
       #social-container {
@@ -360,7 +372,7 @@
     <span class="dark-mode-container">
       <h4 class="dark-mode">Dark Mode</h4>
       <label class="toggle-switch">
-        <input type="checkbox" onclick="changeDarkMode()" checked>
+        <input type="checkbox" onclick="changeDarkMode()">
         <span class="slider round"></span>
       </label>
     </span>
