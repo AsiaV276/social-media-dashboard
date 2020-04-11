@@ -4,10 +4,15 @@ function changeDarkMode() {
     //var checkBox = document.getElementById('toggle-dark-mode');
 
     /* selecting elements */
+    var toggleBkg = document.getElementsByClassName('toggle-switch');
     var socialBox = document.getElementsByClassName('social-box');
     var igBox = document.getElementsByClassName('ig-border-inner');
     var overviewBox = document.getElementsByClassName('overview-box');
     var background = document.body;
+
+
+        //changing toggle switch background
+        toggleBkg[0].classList.toggle('light-toggle-switch');
 
         //changing social boxes
         var i;

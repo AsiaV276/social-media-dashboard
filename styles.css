@@ -357,5 +357,8 @@
   .light-ftext {
     color: var(--light-text);
   }
+  .light-toggle-switch {
+    background-image: linear-gradient(to right, var(--toggle-light), var(--toggle-light));
+  }
 
 
