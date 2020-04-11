@@ -130,7 +130,7 @@
   }
 
   .social-box {
-    width: auto;
+    min-width: 225px;
     padding: 25px 50px;
     background-color: var(--dark-card);
     text-align: center;
@@ -145,7 +145,7 @@
     border-top: var(--tw-color) 5px solid;
   }
   .ig-border-box {
-    width: auto;
+    min-width: 225px;
     text-align: center;
     border-radius: 5px;
     margin-bottom: 20px;
@@ -155,7 +155,7 @@
     text-align: center;
   }
   .ig-border-inner {
-    padding: 25px 50px;
+    padding: 25px 72px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: var(--dark-card);
@@ -235,11 +235,11 @@
     padding-left: 10px;
   }
   
-
+/* Larger Screens */
   @media only screen and (min-width: 720px) {
-    body {
+    /*body {
       margin: 20px;
-    }
+    }*/
     
     header {
       display: flex;
@@ -281,9 +281,22 @@
     }
 
     .overview-box {
-      width: 300px;
+        min-width: 250px;
+        max-width: 300px;
     }
   }
+
+  @media only screen and (min-width: 796px) {
+    body {
+        margin: 20px;
+      }
+
+    #social-container {
+        margin: 0;
+    }
+      
+  }
+  /* End  */
   
   .box-s1 img,
   .box-s1 p {
